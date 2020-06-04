@@ -26,7 +26,7 @@ import { transition, trigger, state, animate, style } from '@angular/animations'
         transform: 'translateY(0)'
       })),
       state('disappear', style({
-        opacity:0,
+        opacity: 0,
         transform: 'translateY(-10px)'
       })),
       transition('disappear => appear', [
@@ -37,13 +37,18 @@ import { transition, trigger, state, animate, style } from '@angular/animations'
 })
 export class PresentationComponent implements OnInit {
   window;
-  @HostListener('window:scroll', ['$event']) onScrollEvent($event){
-    this.window = window.pageYOffset;
-    console.log(this.window)
-  } 
+  innerWidth = 900;
+  resizecheck = false;
+  @HostListener('window:scroll', ['$event']) onScrollEvent($event) {
+    this.window = window.innerWidth > 1300 ? window.pageYOffset : window.pageYOffset + 450;
+  }
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.resizecheck = true;
+    this.innerWidth = window.innerWidth;
+  }
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }
