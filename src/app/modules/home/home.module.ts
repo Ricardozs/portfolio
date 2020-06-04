@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { AboutRoutingModule } from './about-routing.module';
+import { HomeRoutingModule } from './home-routing.module';
 import { PresentationComponent } from './presentation/presentation.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -10,7 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   declarations: [PresentationComponent],
   imports: [
     CommonModule,
-    AboutRoutingModule,
+    HomeRoutingModule,
   ]
 })
-export class AboutModule { }
+export class HomeModule { }

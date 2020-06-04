@@ -37,18 +37,17 @@ import { transition, trigger, state, animate, style } from '@angular/animations'
 })
 export class PresentationComponent implements OnInit {
   window;
-  innerWidth = 900;
-  resizecheck = false;
+  innerWidth;
   @HostListener('window:scroll', ['$event']) onScrollEvent($event) {
     this.window = window.innerWidth > 1300 ? window.pageYOffset : window.pageYOffset + 450;
   }
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    this.resizecheck = true;
     this.innerWidth = window.innerWidth;
   }
   constructor() { }
 
   ngOnInit(): void {
+    this.innerWidth = window.innerWidth;
   }
 }

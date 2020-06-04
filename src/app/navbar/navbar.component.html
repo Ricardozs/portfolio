@@ -49,5 +49,44 @@
     </div>
 </clr-header>-->
 <div class="navbar-fixed">
-
+  <div class="mobile-navigation" *ngIf="innerWidth <= 900">
+    <div class="menu-icon">
+      <a (click)="toggleMenu()">
+        <clr-icon
+          shape="bars"
+          class="is-inverse"
+          style="width: 25px; height: 25px;"
+        ></clr-icon>
+      </a>
+    </div>
+    <div class="logo-container-mobile">
+      Technology Solutions
+    </div>
+    <div class="links-container-mobile" [@hideShow]="hide ? 'hide' : 'show'">
+      <div class="icon-container">
+        <a (click)="toggleMenu()">
+          <clr-icon
+            shape="times"
+            class="is-inverse"
+            style="width: 25px; height: 25px;"
+          ></clr-icon>
+        </a>
+      </div>
+      <div class="links">
+        <a routerLink="/home" routerLinkActive="activeLink">Home</a>
+        <a routerLink="/about" routerLinkActive="activeLink">About</a>
+        <a routerLink="/contact" routerLinkActive="activeLink">Contact</a>
+      </div>
+    </div>
+  </div>
+  <div class="normal-navigation" *ngIf="innerWidth > 900">
+    <div class="logo-container">
+      Technology Solutions
+    </div>
+    <div class="links-container">
+      <a routerLink="/home" routerLinkActive="activeLink">Home</a>
+      <a routerLink="/about" routerLinkActive="activeLink">About</a>
+      <a routerLink="/contact" routerLinkActive="activeLink">Contact</a>
+    </div>
+  </div>
 </div>
