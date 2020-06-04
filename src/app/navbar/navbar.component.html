@@ -73,9 +73,9 @@
         </a>
       </div>
       <div class="links">
-        <a routerLink="/home" routerLinkActive="activeLink">Home</a>
-        <a routerLink="/about" routerLinkActive="activeLink">About</a>
-        <a routerLink="/contact" routerLinkActive="activeLink">Contact</a>
+        <a routerLink="/home" routerLinkActive="activeLink" (click)="hide = !hide">Home</a>
+        <a routerLink="/about" routerLinkActive="activeLink" (click)="hide = !hide">About</a>
+        <a routerLink="/contact" routerLinkActive="activeLink" (click)="hide = !hide">Contact</a>
       </div>
     </div>
   </div>
