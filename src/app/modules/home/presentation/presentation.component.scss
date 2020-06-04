@@ -189,7 +189,13 @@
 @media screen and (max-width: 900px) {
   /*===HeaderTextMobile===*/
   .header-text {
-    font-size: 40px;
+    font-size: 30px;
+  }
+  /*===ExplanationImgMobile===*/
+  .explanation-img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   /*===BenefitsDetailMobile*/
   .benefits-details {
