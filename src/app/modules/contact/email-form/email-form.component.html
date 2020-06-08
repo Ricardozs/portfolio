@@ -1,0 +1,112 @@
+<div class="email-form-container">
+  <div class="contact-img">
+    <img src="./../../../../assets/img/ContactImg.png" />
+  </div>
+  <div class="form-wrapper mt-0">
+    <div class="card">
+      <div class="card-header">
+        Contact Form
+      </div>
+      <div class="card-block mt-0">
+        <div class="clr-row">
+          <div class="clr-col-6">
+            <form clrform [formGroup]="contactForm" style="margin-top: -18px;">
+              <clr-input-container>
+                <label>Name</label>
+                <input
+                  clrInput
+                  type="text"
+                  placeholder="John Doe"
+                  formControlName="name"
+                />
+                <clr-control-helper>Please write your name</clr-control-helper>
+                <clr-control-error *clrIfError="'required'"
+                  >This is a required Field</clr-control-error
+                >
+                <clr-control-error *clrIfError="'maxlength'; error as err"
+                  >Must be at tops
+                  {{ err.requiredLength }} characters</clr-control-error
+                >
+              </clr-input-container>
+              <clr-input-container>
+                <label>Company (optional)</label>
+                <input
+                  clrInput
+                  type="text"
+                  placeholder="Example Co."
+                  formControlName="company"
+                />
+                <clr-control-helper
+                  >This is a optional input</clr-control-helper
+                >
+              </clr-input-container>
+              <clr-input-container>
+                <label>Email</label>
+                <input
+                  clrInput
+                  type="text"
+                  placeholder="example@example.com"
+                  formControlName="email"
+                />
+                <clr-control-error *clrIfError="'required'"
+                  >This is a required Field</clr-control-error
+                >
+                <clr-control-error *clrIfError="'email'"
+                  >Please write a valid email</clr-control-error
+                >
+              </clr-input-container>
+              <clr-input-container>
+                <label>Phone Number</label>
+                <input
+                  clrInput
+                  formControlName="phone"
+                  type="text"
+                  ng2TelInput
+                  placeholder="123-456-7890"
+                  (countryChange)="countryChange($event)"
+                />
+                <clr-control-helper
+                  >Please write your phone o cell phone
+                  number</clr-control-helper
+                >
+                <clr-control-error *clrIfError="'required'"
+                  >This is a required Field</clr-control-error
+                >
+                <clr-control-error *clrIfError="'maxlength'; error as err"
+                  >Must be at tops
+                  {{ err.requiredLength }} characters</clr-control-error
+                >
+                <clr-control-error *clrIfError="'pattern'"
+                  >Please write a valid phone number</clr-control-error
+                >
+              </clr-input-container>
+              <clr-textarea-container>
+                <label>Request</label>
+                <textarea
+                  clrTextarea
+                  formControlName="request"
+                  placeholder="Please contact me for more information"
+                ></textarea>
+                <clr-control-helper
+                  >Please write why you want to be contacted</clr-control-helper
+                >
+                <clr-control-error *clrIfError="'required'"
+                  >This is a required Field</clr-control-error
+                >
+                <clr-control-error *clrIfError="'maxlength'; error as err"
+                  >Must be at tops
+                  {{ err.requiredLength }} characters</clr-control-error
+                >
+              </clr-textarea-container>
+              <button class="btn btn-online mt-10">Submit</button>
+            </form>
+          </div>
+          <div class="form-helper clr-col-6">
+            Please write your concerns or doubts, we are happy to help you and
+            we'll get back to you as soon as possible
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
